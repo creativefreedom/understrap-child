@@ -31,3 +31,21 @@ function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
+
+add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
+
+// Load in custom theme features
+$understrap_child_includes = array(
+    '/_blocks.php',
+    '/_theme.php',
+);
+
+foreach ( $understrap_child_includes as $file ) {
+    $filepath = locate_template( 'inc' . $file );
+    if ( ! $filepath ) {
+        trigger_error( sprintf( 'Error locating /inc%s for inclusion', $file ), E_USER_ERROR );
+    }
+    require_once $filepath;
+}

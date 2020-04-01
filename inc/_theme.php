@@ -44,3 +44,25 @@ function understrap_child_theme_setup() {
 add_action( 'after_setup_theme', 'understrap_child_theme_setup' );
 
 
+// Enqueue Google Fonts
+function understap_child_load_google_fonts() {
+
+    $fonts = array(
+        "Bebas Neue" => [],
+        "Open Sans" => [600,700]
+    );
+
+    $font_string = "";
+
+    foreach($fonts as $font => $weights) {
+        $font_string .= !empty($font_string) ? "|". urlencode($font) : urlencode($font);
+        if(is_array($weights) && count($weights) > 0) $font_string .= ":" . implode(",", $weights);
+    }
+    
+    if(!empty($font_string))
+        wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family='.$font_string.'&display=swap');
+
+}
+
+add_action( 'wp_enqueue_scripts', 'understap_child_load_google_fonts' );
+add_action( 'admin_enqueue_scripts', 'understap_child_load_google_fonts' );

@@ -1,3 +1,5 @@
+@import "block_button";
+
 .entry-content > * {
 	@include media-breakpoint-up(sm) {
 		@include make-col(10);

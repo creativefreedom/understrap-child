@@ -1,0 +1,91 @@
+/** Gravity Forms */
+.gform_wrapper form {
+  margin-bottom: 0;
+}
+
+.gform_wrapper ul {
+	@extend .list-unstyled;
+}
+.gfield {
+	@extend .form-group;
+	input[type="email"],
+	input[type="date"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="month"],
+	input[type="number"],
+	input[type="password"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="text"],
+	input[type="time"],
+	input[type="week"],
+	input[type="url"],
+	select,
+	textarea {
+		@extend .form-control;
+		background-clip: border-box;
+		&.small { @extend .form-control-sm; }
+		&.large { @extend .form-control-lg; }
+	}
+
+}
+.hidden_label label {
+	@extend .sr-only;
+}
+
+.gform_heading {
+	line-height: 1.45;
+	margin-bottom: 1rem;
+}
+.gfield_checkbox,
+.gfield_radio {
+	li {
+		margin-bottom: 0;
+		line-height: 1.7;
+		@extend .form-check;
+	}
+	input[type=radio],
+	input[type=checkbox] { @extend .form-check-input; }
+	label { @extend .form-check-label; }
+	input[type=text] {
+		@extend .form-control-sm;
+	}
+}
+
+.gfield_description {
+	@extend .form-text;
+	@extend .text-muted;
+	@extend small;
+}
+
+.gfield_required {
+	color: $primary;
+}
+
+.gform_wrapper .button {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-block;
+}
+
+.gform_wrapper .gfield_error {
+  .gfield_label {
+    @extend .alert-danger;
+  }
+
+  input,
+  select,
+  textarea {
+    @extend .alert-danger;
+  }
+}
+
+.validation_error {
+  @extend .alert;
+  @extend .alert-danger;
+}
+
+.validation_message {
+	@extend .invalid-feedback;
+}

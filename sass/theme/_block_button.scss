@@ -1,0 +1,7 @@
+.wp-block-button__link {
+	@extend .btn;
+	.is-style-fill & { @extend .btn-primary; }
+	.is-style-outline & { @extend .btn-outline-primary; }
+	.is-style-secondary & { @extend .btn-secondary; }
+	.is-style-secondary-outline & { @extend .btn-outline-secondary; }
+} 

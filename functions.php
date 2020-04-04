@@ -40,6 +40,7 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 $understrap_child_includes = array(
     '/_blocks.php',
     '/_theme.php',
+    '/_menus.php',
 );
 
 foreach ( $understrap_child_includes as $file ) {

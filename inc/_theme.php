@@ -15,24 +15,47 @@ function understrap_child_theme_setup() {
     add_theme_support( 'align-wide' );
 
     // Theme colours: Adds support for editor color palette.
-    
     add_theme_support( 'editor-color-palette', array(
         array(
-            'name'  => __( 'Red' ),
+            'name'  => __( 'Red' 'understrap_child' ),
             'slug'  => 'red',
             'color' => '#FF0000',
         ),
         array(
-            'name'  => __( 'Green' ),
+            'name'  => __( 'Green' 'understrap_child' ),
             'slug'  => 'green',
             'color' => '#00FF00',
         ),
         array(
-            'name'  => __( 'Blue' ),
+            'name'  => __( 'Blue' 'understrap_child' ),
             'slug'  => 'blue',
             'color' => '#0000FF',
         ),
 
+    ) );
+
+    // Theme font sizes
+    add_theme_support( 'editor-font-sizes', array(
+        array(
+            'name' => __( 'Small', 'understrap_child' ),
+            'size' => 12,
+            'slug' => 'small'
+        ),
+        array(
+            'name' => __( 'Regular', 'understrap_child' ),
+            'size' => 16,
+            'slug' => 'regular'
+        ),
+        array(
+            'name' => __( 'Large', 'understrap_child' ),
+            'size' => 36,
+            'slug' => 'large'
+        ),
+        array(
+            'name' => __( 'Huge', 'understrap_child' ),
+            'size' => 50,
+            'slug' => 'huge'
+        )
     ) );
 
     // Editor stylesheet

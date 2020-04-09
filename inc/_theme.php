@@ -17,17 +17,17 @@ function understrap_child_theme_setup() {
     // Theme colours: Adds support for editor color palette.
     add_theme_support( 'editor-color-palette', array(
         array(
-            'name'  => __( 'Red' 'understrap_child' ),
+            'name'  => __( 'Red', 'understrap_child' ),
             'slug'  => 'red',
             'color' => '#FF0000',
         ),
         array(
-            'name'  => __( 'Green' 'understrap_child' ),
+            'name'  => __( 'Green', 'understrap_child' ),
             'slug'  => 'green',
             'color' => '#00FF00',
         ),
         array(
-            'name'  => __( 'Blue' 'understrap_child' ),
+            'name'  => __( 'Blue', 'understrap_child' ),
             'slug'  => 'blue',
             'color' => '#0000FF',
         ),

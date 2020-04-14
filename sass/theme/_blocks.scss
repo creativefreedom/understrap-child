@@ -1,5 +1,34 @@
 @import "block_button";
 
+
+// Gutenberg color options
+// -- see editor-color-palette in functions.php
+$colors: (
+	'blue':		#97D2D7,
+	'green':	#128B37,
+	'yellow':	#F6F936,
+	'orange':	#F4933D,
+	'red':		#FD3533,
+	'maroon':	#CA2E36,
+	'pink':		#F28EAD,
+	'black':	#000,
+	'grey':		#F8F8F8,
+	'white':	#FFF
+);
+
+@each $name, $color in $colors {
+
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}
+
+// Gutenberg wide layouts
+
 .entry-content > * {
 	@include media-breakpoint-up(sm) {
 		@include make-col(10);

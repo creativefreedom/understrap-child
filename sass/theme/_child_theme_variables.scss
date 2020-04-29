@@ -12,3 +12,26 @@
 
 $primary: #7C008C;
 
+
+//
+// Grids
+//
+$grid-breakpoints: (
+  xs: 0,
+  sm: 599px, //Adjusted for gutenberg breakpoints
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 563px,  //Adjusted for gutenberg breakpoints
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;

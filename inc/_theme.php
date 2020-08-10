@@ -14,25 +14,38 @@ function understrap_child_theme_setup() {
     // Register support for Gutenberg wide images in your theme
     add_theme_support( 'align-wide' );
 
-    // Theme colours: Adds support for editor color palette.
-    add_theme_support( 'editor-color-palette', array(
-        array(
-            'name'  => __( 'Red', 'understrap_child' ),
-            'slug'  => 'red',
-            'color' => '#FF0000',
-        ),
-        array(
-            'name'  => __( 'Green', 'understrap_child' ),
-            'slug'  => 'green',
-            'color' => '#00FF00',
-        ),
-        array(
-            'name'  => __( 'Blue', 'understrap_child' ),
-            'slug'  => 'blue',
-            'color' => '#0000FF',
-        ),
+    $colours = array(
+        'purple' =>        '#7C008C',
+        'black' =>         '#000',
+        'white' =>         '#FFF',
+    );
+    
+    $colour_map = array();
+    
+    foreach($colours as $colour => $hex) {
+        $colour_map[] = array(
+            'name'  => $colour,
+            'slug'  => strtolower(str_replace(' ', '-', $colour)),
+            'color' => $hex,
+        );
+    }
 
-    ) );
+    // Theme colours: Adds support for editor color palette.
+    if(! empty($colour_map) ) {
+        add_theme_support( 'editor-color-palette', $colour_map );
+    }
+
+    // add_theme_support(
+    //     'editor-gradient-presets',
+    //     array(
+    //         array(
+    //             'name'     => __( 'Green to mauve', 'understrap_child' ),
+    //             'gradient' => 'linear-gradient(175deg,rgba(80,178,115,.8) 0%,rgba(119, 84, 114, .8) 100%)',
+    //             'slug'     => 'green-to-mauve'
+    //         ),
+    //     )
+    // );
+
 
     // Theme font sizes
     add_theme_support( 'editor-font-sizes', array(
@@ -72,7 +85,7 @@ function understap_child_load_google_fonts() {
 
     $fonts = array(
         "Bebas Neue" => [],
-        "Open Sans" => [600,700]
+        "Open Sans" => [300, 500, 700]
     );
 
     $font_string = "";

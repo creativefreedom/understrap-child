@@ -38,6 +38,7 @@
 	line-height: 1.45;
 	margin-bottom: 1rem;
 }
+
 .gfield_checkbox,
 .gfield_radio {
 	li {
@@ -88,4 +89,8 @@
 
 .validation_message {
 	@extend .invalid-feedback;
+}
+
+.gform_ajax_spinner {
+	@extend .spinner-border;
 }

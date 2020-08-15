@@ -2,3 +2,6 @@
 @import "assets/bootstrap4";                             // <------- Loads Bootstrap4
 @import "theme/child_theme";                             // <------- Add your styles into this file
  
+.components-circular-option-picker__option {
+	border-radius: 99px;
+}

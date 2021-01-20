@@ -15,6 +15,7 @@ var del = require( 'del' );
 var cleanCSS = require( 'gulp-clean-css' );
 var replace = require( 'gulp-replace' );
 var autoprefixer = require( 'gulp-autoprefixer' );
+var babel = require( 'gulp-babel' );
 
 // Configuration file to keep your code DRY
 var cfg = require( './gulpconfig.json' );
@@ -135,6 +136,10 @@ gulp.task( 'scripts', function() {
     ];
   gulp.src( scripts, { allowEmpty: true } )
     .pipe( concat( 'child-theme.min.js' ) )
+    .pipe( babel( {
+        presets: ['@babel/preset-env'],
+        plugins: ['@babel/plugin-transform-modules-commonjs']
+    } ) )
     .pipe( uglify() )
     .pipe( gulp.dest( paths.js ) );
 
@@ -241,4 +246,5 @@ gulp.task( 'dist-product', gulp.series('clean-dist-product', function copyToDist
 } ));
 
 // Deleting any file inside the /dist-product folder
-gulp.task( 'compile', gulp.series( 'styles', 'scripts', 'dist' ));
+
+gulp.task( 'compile', gulp.series( 'styles', 'scripts' ));

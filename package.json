@@ -4,6 +4,9 @@
   "description": "Basic Child Theme for UnderStrap Theme Framework: https://github.com/holger1411/understrap",
   "main": "index.js",
   "scripts": {
+    "start": "gulp watch-bs",
+    "dev": "gulp watch",
+    "build": "gulp compile",
     "postinstall": "gulp copy-assets"
   },
   "repository": {
@@ -51,5 +54,11 @@
     "run-sequence": "^2.2.1",
     "understrap": "^0.9.1",
     "undescores-for-npm": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "gulp-babel": "^8.0.0"
   }
 }

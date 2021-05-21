@@ -96,7 +96,7 @@ function understap_child_load_google_fonts() {
     }
     
     if(!empty($font_string))
-        wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family='.$font_string.'&display=swap');
+        cf_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family='.$font_string.'&display=swap');
 
 }
 

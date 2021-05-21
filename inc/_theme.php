@@ -102,3 +102,28 @@ function understap_child_load_google_fonts() {
 
 add_action( 'wp_enqueue_scripts', 'understap_child_load_google_fonts' );
 add_action( 'admin_enqueue_scripts', 'understap_child_load_google_fonts' );
+
+/**
+ * Add custom logo to wordpress login screen
+ */
+function cf_login_enqueue_scripts() {
+    // Change login logo
+    if( has_custom_logo()) {
+
+        $styles = [
+            'width'						=> '175px',
+            'height'					=> '125px',
+            'background-size'	=> '100%',
+        ];
+
+        $css = sprintf( 
+            '#login h1 a, .login h1 a { background-image: url(%s); %s }', 
+            wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ), 'full', false ),
+            implode( ';', array_map( function( $key ) use( $styles ) {
+                return "{$key}: {$styles[$key]}";
+            }, array_keys( $styles ) ) )
+        );
+        printf( '<style type="text/css">%s</style>', $css );
+    }
+}
+add_action( 'login_enqueue_scripts', 'cf_login_enqueue_scripts', 20 );
